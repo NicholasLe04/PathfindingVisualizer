@@ -18,7 +18,7 @@ public class Maze {
 
         for(int i = 1; i < size - 1; i++){
             for(int j = 1; j < size - 1; j++){
-                if (Math.random() > 0.75){
+                if (Math.random() > 0.85){
                     grid[i][j] = 1;
                 }
                 else{
@@ -30,7 +30,8 @@ public class Maze {
         grid[1][1] = 0;
         grid[size-2][size-2] = 9;
         DFS.DFSsearch(this.grid, 1, 1, path);
-        
+        //BFS.BFSsearch(this.grid, 1, 1, path);
     }
+    
 
 }

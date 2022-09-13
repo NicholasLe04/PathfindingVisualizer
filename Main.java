@@ -5,6 +5,7 @@ public class Main{
     public static void main(String args[]) throws Exception{
         GUI gui = new GUI();
         
+
         ActionListener taskPerformer = new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 gui.mazePanel.traversePath();

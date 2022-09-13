@@ -11,16 +11,17 @@ public class MazePanel extends JPanel{
     Random random = new Random();
     int pathIndex = maze.path.size() - 1;
 
-    MazePanel(){
-        this.setPreferredSize(new Dimension(800, 800));
+    MazePanel(int resolution){
+        this.setPreferredSize(new Dimension(resolution, resolution));
     }
+
     
     public void traversePath(){
         if (pathIndex > 0){
             int x = maze.path.get(pathIndex - 1);
             int y = maze.path.get(pathIndex);
     
-            maze.grid[y][x] = 3;
+            maze.grid[y][x] = 2;
             pathIndex -= 2;
         }
         
@@ -33,14 +34,17 @@ public class MazePanel extends JPanel{
 
         for (int i = 0; i < maze.size; i++){
             for (int j = 0; j < maze.size; j++){
+                /*
+                 * 1 = Wall
+                 * 2 = Path
+                 * 9 = Goal
+                 * 0 = Open
+                 */
                 switch(maze.grid[i][j]){
                     case 1:
                         g2.setColor(Color.BLACK);
                         break;
-                    //case 2:
-                      //  g2.setColor(Color.GRAY);
-                        //break; 
-                    case 3:
+                    case 2:
                         g2.setColor(Color.GREEN);
                         break;
                     case 9: 

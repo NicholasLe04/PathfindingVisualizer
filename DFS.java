@@ -8,7 +8,8 @@ public class DFS {
         }
 
         if (grid[start_y][start_x] == 0){
-            grid[start_y][start_x] = 2;
+            // -1: Visited
+            grid[start_y][start_x] = -1;
 
             int delta_x = -1;
             int delta_y = 0;
@@ -42,7 +43,6 @@ public class DFS {
                 return true;
             }
         }
-
         return false;
     }
 
