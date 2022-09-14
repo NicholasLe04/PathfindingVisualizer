@@ -1,10 +1,13 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Queue;
 
 public class Maze {
     
     public int size;
     public int[][] grid;
     public ArrayList<Integer> path = new ArrayList<Integer>();
+    public ArrayList<Integer> visited = new ArrayList<Integer>();
 
     public Maze(int size){
         this.size = size;
@@ -29,8 +32,23 @@ public class Maze {
 
         grid[1][1] = 0;
         grid[size-2][size-2] = 9;
-        DFS.DFSsearch(this.grid, 1, 1, path);
-        //BFS.BFSsearch(this.grid, 1, 1, path);
+
+
+
+        Queue<Position> queue = new ArrayDeque<>();
+        queue.add(new Position(1, 1));
+
+        int[][] dist = new int[grid.length][grid.length];
+        
+        for (int i = 0; i < grid.length; i++){
+            for (int j = 0; j < grid.length; j++){
+                dist[i][j] = 10;
+            }
+        }
+        dist[1][1] = 0;
+
+        DFS.DFSsearch(this.grid, 1, 1, path, visited);
+        //BFS.BFSsearch(this.grid, dist, queue, path);
     }
     
 
