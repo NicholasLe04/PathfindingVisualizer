@@ -1,6 +1,6 @@
 # PathfindingVisualizer
 
-![](https://github.com/NicholasLe04/PathfindingVisualizer/blob/main/preview.gif)
+![](https://github.com/NicholasLe04/PathfindingVisualizer/blob/main/visualization.gif)
 
 ---
 
