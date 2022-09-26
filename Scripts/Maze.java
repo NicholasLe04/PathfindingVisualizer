@@ -35,20 +35,10 @@ public class Maze {
 
 
 
-        Queue<Position> queue = new ArrayDeque<>();
-        queue.add(new Position(1, 1));
-
-        int[][] dist = new int[grid.length][grid.length];
         
-        for (int i = 0; i < grid.length; i++){
-            for (int j = 0; j < grid.length; j++){
-                dist[i][j] = 10;
-            }
-        }
-        dist[1][1] = 0;
 
         DFS.DFSsearch(this.grid, 1, 1, path, visited);
-        //BFS.BFSsearch(this.grid, dist, queue, path);
+        //BFS.BFSsearch();
     }
     
 

@@ -36,7 +36,7 @@ public class MazePanel extends JPanel{
         };
         visitTimer = new Timer(10 ,taskPerformer);
         visitTimer.start();
-        Thread.sleep(7 * maze.visited.size());
+        Thread.sleep(6 * maze.visited.size());
         traversePath();
     }
     
@@ -53,7 +53,7 @@ public class MazePanel extends JPanel{
                 repaint();
             }
         };
-        pathTimer = new Timer(10 ,taskPerformer);
+        pathTimer = new Timer(3 ,taskPerformer);
         pathTimer.start();
     }
 
